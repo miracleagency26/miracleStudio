@@ -1,0 +1,330 @@
+/* --- VARIABILI COLORI MIRACLE --- */
+:root {
+    --bg-dark: #080808;
+    --card-bg: #111111;
+    --brand-color: #dafb3b;
+    --brand-hover: #c4e432;
+    --text-light: #ffffff;
+    --text-muted: #9e9e9e;
+    --glow-spread: rgba(218, 251, 59, 0.15);
+    --border-color: rgba(218, 251, 59, 0.22);
+    --border-light: rgba(255, 255, 255, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.glow-bg {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--glow-spread) 0%, rgba(8,8,8,0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo { max-width: 140px; }
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* Stili Testo (Condivisi con la home) */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(218, 251, 59, 0.08);
+    border: 1px solid var(--border-color);
+    color: var(--brand-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.headline { font-size: 2.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+.highlight { color: var(--brand-color); }
+.subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 40px; }
+
+/* Lista Benefici */
+.benefits-list h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.check-icon {
+    background: var(--brand-color);
+    color: var(--bg-dark);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.benefit-item strong {
+    color: var(--text-light);
+}
+
+/* Form Design */
+.form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.input-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    border-color: var(--brand-color);
+    background: rgba(218, 251, 59, 0.02);
+    box-shadow: 0 0 0 3px rgba(218, 251, 59, 0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-cta {
+    background-color: var(--brand-color);
+    color: var(--bg-dark);
+    box-shadow: 0 4px 20px rgba(218, 251, 59, 0.25);
+    border: none;
+}
+
+.primary-cta:hover {
+    background-color: var(--brand-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(218, 251, 59, 0.4);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-light);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.microcopy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 50px 30px;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(218, 251, 59, 0.1);
+    color: var(--brand-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px auto;
+    border: 2px solid var(--brand-color);
+}
+
+.success-message h2 {
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.back-home {
+    display: inline-block;
+}
+
+/* Responsive per iPhone / Mobile */
+@media (max-width: 768px) {
+    .split-layout { grid-template-columns: 1fr; gap: 40px; }
+    .headline { font-size: 2rem; }
+    .form-card { padding: 25px; }
+
+}
+
+/* --- CUSTOM SELECT MODERNO --- */
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+    width: 100%;
+}
+
+.custom-select-trigger {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.custom-select-trigger:hover,
+.custom-select.open .custom-select-trigger {
+    border-color: var(--brand-color);
+    background: rgba(218, 251, 59, 0.02);
+    box-shadow: 0 0 0 3px rgba(218, 251, 59, 0.1);
+}
+
+.custom-select-trigger .arrow {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+}
+
+.custom-select.open .custom-select-trigger .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-10px);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.custom-select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.custom-option {
+    display: block;
+    padding: 14px 16px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.custom-option:last-child {
+    border-bottom: none;
+}
+
+.custom-option:hover,
+.custom-option.selected {
+    background: rgba(218, 251, 59, 0.08);
+    color: var(--brand-color);
+    padding-left: 24px; /* Effetto slide a destra sull'hover */
+}
+
