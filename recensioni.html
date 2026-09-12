@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Recensione | Miracle Agency</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <!-- FOGLIO DI STILE -->
+    <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+
+    <main class="container" style="max-width: 600px;">
+        <!-- LOGO -->
+        <header class="logo-container">
+            <a href="index.html">
+                <img src="logom.png" alt="Miracle Agency Logo" class="logo">
+            </a>
+        </header>
+
+        <section class="cta-box-section" style="text-align: left;">
+            <span class="badge">TESTIMONIANZE</span>
+            <h2>Lascia la tua recensione</h2>
+            <p>Racconta la tua esperienza con Miracle Agency.</p>
+            
+            <!-- FORM DI INSERIMENTO -->
+            <form id="reviewForm" style="display: flex; flex-direction: column; gap: 20px; margin-top: 25px;">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-light);">Nome e Cognome</label>
+                    <input type="text" id="authorName" required placeholder="es. Mario Rossi" style="padding: 14px; background: var(--bg-dark); border: 1px solid var(--border-light); border-radius: 8px; color: white; font-size: 0.95rem;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-light);">Ruolo / Attività</label>
+                    <input type="text" id="authorRole" required placeholder="es. E-commerce Manager - Milano" style="padding: 14px; background: var(--bg-dark); border: 1px solid var(--border-light); border-radius: 8px; color: white; font-size: 0.95rem;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-light);">La tua recensione</label>
+                    <textarea id="reviewText" required rows="4" placeholder="Scrivi come ci siamo conosciuti e che risultati hai ottenuto..." style="padding: 14px; background: var(--bg-dark); border: 1px solid var(--border-light); border-radius: 8px; color: white; font-size: 0.95rem; resize: vertical;"></textarea>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-light);">Valutazione (Stelle)</label>
+                    <select id="reviewStars" style="padding: 14px; background: var(--bg-dark); border: 1px solid var(--border-light); border-radius: 8px; color: white; font-size: 0.95rem;">
+                        <option value="★★★★★">5 Stelle (Eccellente)</option>
+                        <option value="★★★★☆">4 Stelle</option>
+                        <option value="★★★☆☆">3 Stelle</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="cta-button primary-cta" style="border: none; margin-top: 10px; cursor: pointer; text-align: center;">Pubblica Recensione</button>
+            </form>
+            
+            <p id="formMessage" style="margin-top: 15px; font-size: 0.9rem; color: var(--brand-color); display: none; text-align: center;"></p>
+        </section>
+    </main>
+
+    <!-- SCRIPT GESTIONE INVIO -->
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newReview = {
+                name: document.getElementById('authorName').value,
+                role: document.getElementById('authorRole').value,
+                text: document.getElementById('reviewText').value,
+                stars: document.getElementById('reviewStars').value
+            };
+
+            let reviews = JSON.parse(localStorage.getItem('miracle_reviews')) || [];
+            reviews.unshift(newReview);
+            localStorage.setItem('miracle_reviews', JSON.stringify(reviews));
+
+            const msg = document.getElementById('formMessage');
+            msg.style.display = 'block';
+            msg.textContent = 'Recensione pubblicata con successo! Reindirizzamento in corso...';
+            
+            setTimeout(() => {
+                window.location.href = 'index.html#recensioni';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

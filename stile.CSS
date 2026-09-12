@@ -1,0 +1,631 @@
+/* --- VARIABILI COLORI MIRACLE --- */
+:root {
+    --bg-dark: #080808;
+    --card-bg: #111111;
+    --brand-color: #dafb3b;
+    --brand-hover: #c4e432;
+    --text-light: #ffffff;
+    --text-muted: #9e9e9e;
+    --glow-spread: rgba(218, 251, 59, 0.15);
+    --border-color: rgba(218, 251, 59, 0.22);
+    --border-light: rgba(255, 255, 255, 0.08);
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Sfondo Glow Radiale */
+.glow-bg {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--glow-spread) 0%, rgba(8,8,8,0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- CONTAINER PRINCIPALE --- */
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    text-align: center;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- LOGO --- */
+.logo-container {
+    margin-bottom: 50px;
+}
+.logo {
+    max-width: 170px;
+    height: auto;
+}
+
+/* --- HERO SECTION --- */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(218, 251, 59, 0.08);
+    border: 1px solid var(--border-color);
+    color: var(--brand-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.headline {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.8px;
+}
+
+.highlight {
+    color: var(--brand-color);
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 660px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+/* HERO CTA GROUP */
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-cta {
+    background-color: var(--brand-color);
+    color: var(--bg-dark);
+    box-shadow: 0 4px 20px rgba(218, 251, 59, 0.25);
+}
+
+.primary-cta:hover {
+    background-color: var(--brand-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(218, 251, 59, 0.4);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-light);
+}
+
+.secondary-cta:hover {
+    border-color: var(--border-color);
+    color: var(--brand-color);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- STATS BAR --- */
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(18, 18, 18, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 70px;
+    backdrop-filter: blur(8px);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 35px;
+    background-color: var(--border-light);
+}
+
+/* --- FEATURES GRID / WRAPPER ORIZZONTALE --- */
+.features-grid {
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.features-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+
+.feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Icona quadrata con bordo */
+.card-icon-box {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    background: rgba(18, 18, 18, 0.8);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-color);
+}
+
+.feature-svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Testi interni alla card */
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-color);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-light);
+}
+
+.feature-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Divisore verticale tra le card */
+.feature-divider {
+    width: 1px;
+    height: 120px;
+    background-color: var(--border-light);
+    margin: 0 10px;
+}
+
+/* --- ROADMAP / COME FUNZIONA --- */
+.roadmap-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    letter-spacing: -0.5px;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.step-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+}
+
+.step-number {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    background: rgba(218, 251, 59, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.step-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* --- CTA BOX SECTION --- */
+.cta-box-section {
+    background: radial-gradient(circle at center, rgba(218, 251, 59, 0.05) 0%, rgba(18, 18, 18, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 50px 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.cta-box-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.cta-box-section p {
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 30px auto;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cta-microcopy {
+    font-size: 0.82rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- FOOTER --- */
+footer {
+    border-top: 1px solid var(--border-light);
+    padding: 50px 20px 30px 20px;
+    max-width: 920px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-content {
+    max-width: 300px;
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 120px;
+    margin-bottom: 12px;
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.footer-links strong {
+    color: var(--text-light);
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--brand-color);
+}
+
+/* --- AGGIUNTE NUOVA HERO SECTION --- */
+.hero-memoji {
+    width: 90px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5));
+}
+
+.serif-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+.red-highlight {
+    color: #c4e432;
+    font-style: italic;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.new-subtitle {
+    color: #ffffff;
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 25px auto 40px auto;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .features-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+    }
+    
+    .feature-divider {
+        width: 100%;
+        height: 1px;
+        margin: 25px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline { font-size: 2.1rem; }
+    .subtitle { font-size: 1rem; }
+    .hero-cta-group { flex-direction: column; }
+    .cta-button { width: 100%; text-align: center; }
+    .stats-bar { flex-direction: column; gap: 20px; }
+    .stat-divider { width: 60%; height: 1px; }
+    footer { flex-direction: column; text-align: center; align-items: center; }
+    .footer-content { text-align: center; }
+    .footer-links { justify-content: center; text-align: center; gap: 30px; }
+    .footer-links div { text-align: center; }
+}
+
+/* --- STILI INTESTAZIONE SEZIONE METODO --- */
+.section-header-box {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-badge-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+}
+
+/* Linee decorative laterali del badge */
+.section-badge-tag::before,
+.section-badge-tag::after {
+    content: "";
+    height: 1px;
+    width: 50px;
+    background-color: var(--border-light);
+    margin: 0 15px;
+}
+
+.section-main-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--text-light);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* --- STILI SEZIONE RECENSIONI --- */
+.reviews-section {
+    margin-bottom: 80px;
+    width: 100%;
+    text-align: left;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reviews-top-tag {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.reviews-main-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-light);
+    letter-spacing: -0.5px;
+}
+
+.reviews-cta {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    border-radius: 30px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.3s ease;
+}
+
+.review-card:hover {
+    border-color: var(--border-color);
+}
+
+.review-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.review-author-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--border-light);
+    padding-top: 16px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: #222;
+    border: 1px solid var(--border-light);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.author-info strong {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.author-info span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.review-stars {
+    color: #f5c518;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE RECENSIONI --- */
+@media (max-width: 900px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    .reviews-header {
+        align-items: flex-start;
+    }
+}
